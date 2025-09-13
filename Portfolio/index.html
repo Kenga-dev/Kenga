@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenga Amos's Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS configuration for dark mode -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide/dist/umd/lucide.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-white text-gray-800 dark:bg-gray-950 dark:text-gray-200;
+        }
+        .container {
+            @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+        }
+        .section-title {
+            @apply text-4xl sm:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-teal-700 to-cyan-800 dark:from-teal-400 dark:to-cyan-500;
+        }
+        .card-glow {
+            transition: all 0.3s ease-in-out;
+        }
+        .card-glow:hover {
+            box-shadow: 0 0 20px rgba(0, 128, 128, 0.5);
+            transform: translateY(-5px);
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .typing-cursor {
+            border-right: 2px solid;
+            animation: blink-caret 0.75s step-end infinite;
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: white; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="py-6 sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-lg">
+        <div class="container flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-500">Kenga Amos</a>
+            <nav class="flex items-center space-x-4 sm:space-x-6 text-lg">
+                <ul class="flex space-x-4 sm:space-x-6 text-lg">
+                    <li><a href="#about" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300">About</a></li>
+                    <li><a href="#skills" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300">Skills</a></li>
+                    <li><a href="#projects" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300">Contact</a></li>
+                </ul>
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-300">
+                    <i data-lucide="sun" class="w-6 h-6 text-gray-800 dark:text-gray-200"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Container with Border -->
+    <div class="bg-gray-200 border-2 border-cyan-500 rounded-xl p-4 md:p-8 mx-4 my-4 dark:bg-gray-900">
+
+        <!-- Hero Section -->
+        <section class="h-screen flex items-center justify-center text-center relative overflow-hidden">
+            <div class="absolute inset-0 z-0 bg-white dark:bg-gray-900 bg-opacity-50" style="background-image: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(17, 24, 39, 0) 70%);"></div>
+            <div class="container z-10 animate-fade-in">
+                <h1 id="hero-title" class="text-5xl md:text-7xl font-bold text-gray-800 dark:text-white mb-4">
+                    Hello, I'm <span class="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-500" id="typing-text"></span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8">
+                    A fullstack web developer, a web designer and currently a student of ethical hacking.
+                </p>
+                <a href="#projects" class="inline-block bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+                    View My Work
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 animate-fade-in">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                    <div class="md:w-1/3 mb-8 md:mb-0">
+                        <!-- Note: The image path is maintained as requested. Ensure 'images/Kenga3.jpeg' exists in your project folder. -->
+                        <img src="images/Kenga3.jpeg" onerror="this.src='https://placehold.co/400x400/1e293b/d1d5db?text=Profile+Photo'" alt="Your Photo" class="rounded-full shadow-xl w-64 h-64 mx-auto md:mx-0 object-cover border-4 border-gray-700">
+                    </div>
+                    <div class="md:w-2/3 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+                        <p class="mb-4">
+                            Hello! My name is Kenga Amos and I'm a passionate web designer and full-stack web developer. I love building beautiful and functional websites from the ground up, handling everything from the user-facing design to the robust backend engineering.
+                        </p>
+                        <p class="mb-4">
+                            I specialize in technologies like <b class="text-gray-900 dark:text-white">PHP</b> and <b class="text-gray-900 dark:text-white">Laravel</b> for backend development, and I craft stunning user interfaces with <b class="text-gray-900 dark:text-white">Tailwind CSS</b> and <b class="text-gray-900 dark:text-white">Bootstrap</b>. My work is powered by <b class="text-gray-900 dark:text-white">JavaScript</b> and backed by <b class="text-gray-900 dark:text-white">MySQL</b> databases. I use <b class="text-gray-900 dark:text-white">Git</b> and <b class="text-gray-900 dark:text-white">GitHub</b> for version control and am proficient with backend environments like <b class="text-gray-900 dark:text-white">Node.js</b>.
+                        </p>
+                        <p>
+                            Currently, I am also a trainee in ethical hacking, constantly expanding my skills to build more secure and resilient applications.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-gray-100 dark:bg-gray-900 animate-fade-in">
+            <div class="container">
+                <h2 class="section-title">My Skills</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
+                    <!-- Skill Card: Laravel -->
+                    <div class="bg-gray-300 dark:bg-gray-800 p-6 rounded-lg shadow-md card-glow">
+                        <i data-lucide="sparkles" class="w-12 h-12 mx-auto text-orange-600 dark:text-orange-400 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-900 dark:text-white">Laravel</p>
+                    </div>
+                    <!-- Skill Card: PHP -->
+                    <div class="bg-gray-300 dark:bg-gray-800 p-6 rounded-lg shadow-md card-glow">
+                        <i data-lucide="file-code" class="w-12 h-12 mx-auto text-purple-600 dark:text-purple-400 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-900 dark:text-white">PHP</p>
+                    </div>
+                    <!-- Skill Card: Tailwind -->
+                    <div class="bg-gray-300 dark:bg-gray-800 p-6 rounded-lg shadow-md card-glow">
+                        <i data-lucide="wind" class="w-12 h-12 mx-auto text-teal-600 dark:text-teal-400 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-900 dark:text-white">Tailwind CSS</p>
+                    </div>
+                    <!-- Skill Card: Bootstrap (Note: 'bootstrap' is not a supported icon, using a generic 'code' icon) -->
+                    <div class="bg-gray-300 dark:bg-gray-800 p-6 rounded-lg shadow-md card-glow">
+                        <i data-lucide="code" class="w-12 h-12 mx-auto text-indigo-600 dark:text-indigo-400 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-900 dark:text-white">Bootstrap</p>
+                    </div>
+                    <!-- Skill Card: JavaScript -->
+                    <div class="bg-gray-300 dark:bg-gray-800 p-6 rounded-lg shadow-md card-glow">
+                        <i data-lucide="file-text" class="w-12 h-12 mx-auto text-yellow-600 dark:text-yellow-400 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-900 dark:text-white">JavaScript</p>
+                    </div>
+                    <!-- Skill Card: MySQL -->
+                    <div class="bg-gray-300 dark:bg-gray-800 p-6 rounded-lg shadow-md card-glow">
+                        <i data-lucide="database" class="w-12 h-12 mx-auto text-blue-600 dark:text-blue-400 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-900 dark:text-white">MySQL</p>
+                    </div>
+                    <!-- Skill Card: Git/GitHub -->
+                    <div class="bg-gray-300 dark:bg-gray-800 p-6 rounded-lg shadow-md card-glow">
+                        <i data-lucide="github" class="w-12 h-12 mx-auto text-gray-900 dark:text-white mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-900 dark:text-white">Git/GitHub</p>
+                    </div>
+                    <!-- Skill Card: Node.js (Note: 'node' is not a supported icon, using 'box' as a generic container) -->
+                    <div class="bg-gray-300 dark:bg-gray-800 p-6 rounded-lg shadow-md card-glow">
+                        <i data-lucide="box" class="w-12 h-12 mx-auto text-green-600 dark:text-green-400 mb-2"></i>
+                        <p class="text-sm font-semibold text-gray-900 dark:text-white">Node.js</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-gray-300 dark:bg-gray-800 animate-fade-in">
+            <div class="container">
+                <h2 class="section-title">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                    <!-- Project Card 1 -->
+                    <div class="bg-gray-200 dark:bg-gray-800 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 overflow-hidden card-glow">
+                        <!-- Note: The image path is maintained as requested. Ensure 'images/Capture2.png' exists. -->
+                        <img src="images/Capture2.png" onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Project+1+Image'" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Project One</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                A brief description of your project. Mention the technologies used (e.g., PHP, MySQL) and its purpose.
+                            </p>
+                            <a href="index4.html" class="inline-block bg-gray-500 dark:bg-gray-700 hover:bg-gray-600 dark:hover:bg-gray-600 text-white py-2 px-4 rounded-full text-sm font-semibold transition-colors duration-300">
+                                View Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="bg-gray-200 dark:bg-gray-800 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 overflow-hidden card-glow">
+                        <!-- Note: The image path is maintained as requested. Ensure 'images/Capture.png' exists. -->
+                        <img src="images/Capture.png" onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Project+2+Image'" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Project Two</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                A brief description of your project. Mention the technologies used and its purpose.
+                            </p>
+                            <a href="index2.html" class="inline-block bg-gray-500 dark:bg-gray-700 hover:bg-gray-600 dark:hover:bg-gray-600 text-white py-2 px-4 rounded-full text-sm font-semibold transition-colors duration-300">
+                                View Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="bg-gray-200 dark:bg-gray-800 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 overflow-hidden card-glow">
+                        <!-- Note: The image path is maintained as requested. Ensure 'images/Capture4.png' exists. -->
+                        <img src="images/Capture4.png" onerror="this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Project+3+Image'" alt="Project 3" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Project Three</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                A brief description of your project. Mention the technologies used (e.g., Python, Django, SQL) and its purpose.
+                            </p>
+                            <a href="index3.html" class="inline-block bg-gray-500 dark:bg-gray-700 hover:bg-gray-600 dark:hover:bg-gray-600 text-white py-2 px-4 rounded-full text-sm font-semibold transition-colors duration-300">
+                                View Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 animate-fade-in">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="text-center text-gray-600 dark:text-gray-400 mb-4">
+                    Feel free to connect with me. I'm always open to new opportunities and collaborations!
+                </p>
+                <div class="text-center mb-8 flex flex-wrap justify-center items-center gap-6">
+                    <a href="https://www.instagram.com/kenga_amos" target="_blank" class="inline-flex items-center space-x-2 text-cyan-600 hover:text-teal-600 dark:text-cyan-400 dark:hover:text-teal-400 transition-colors duration-300" aria-label="Instagram Profile">
+                        <i data-lucide="instagram" class="w-6 h-6"></i>
+                        <span class="text-lg font-medium">@kenga_amos</span>
+                    </a>
+                    <a href="https://wa.me/254790521749" target="_blank" class="inline-flex items-center space-x-2 text-cyan-600 hover:text-teal-600 dark:text-cyan-400 dark:hover:text-teal-400 transition-colors duration-300" aria-label="WhatsApp Number">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        <span class="text-lg font-medium">0790521749</span>
+                    </a>
+                    <!-- Note: Lucide does not have a TikTok icon. The original SVG has been replaced with a generic 'link' icon from Lucide for consistency. -->
+                    <a href="https://www.tiktok.com/@mramba" target="_blank" class="inline-flex items-center space-x-2 text-cyan-600 hover:text-teal-600 dark:text-cyan-400 dark:hover:text-teal-400 transition-colors duration-300" aria-label="TikTok Profile">
+                        <i data-lucide="link" class="w-6 h-6"></i>
+                        <span class="text-lg font-medium">@Mramba</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-8 bg-gray-800 text-center text-gray-200 dark:bg-gray-950 dark:text-gray-400">
+            <p>&copy; 2024 Kenga Amos. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Script to render Lucide Icons and create typing effect -->
+    <script>
+      // Typing effect - modified to type once
+      const typingTextElement = document.getElementById('typing-text');
+      const textToType = "Kenga Amos";
+      let charIndex = 0;
+
+      function typeWriter() {
+        typingTextElement.classList.add('typing-cursor');
+        if (charIndex < textToType.length) {
+          typingTextElement.textContent += textToType.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeWriter, 100);
+        } else {
+          typingTextElement.classList.remove('typing-cursor');
+        }
+      }
+
+      // Theme toggle functionality
+      function setupThemeToggle() {
+          const themeToggleBtn = document.getElementById('theme-toggle');
+          const htmlElement = document.documentElement;
+          
+          if (!themeToggleBtn) {
+              console.error("Theme toggle button not found. The theme functionality may not work as expected.");
+              return;
+          }
+          
+          const themeIcon = themeToggleBtn.querySelector('i');
+          if (!themeIcon) {
+              console.error("Theme icon not found. The theme functionality may not work as expected.");
+              return;
+          }
+
+          const isDarkMode = localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (isDarkMode) {
+              htmlElement.classList.add('dark');
+              themeIcon.setAttribute('data-lucide', 'moon');
+          } else {
+              htmlElement.classList.remove('dark');
+              themeIcon.setAttribute('data-lucide', 'sun');
+          }
+          lucide.createIcons();
+
+          themeToggleBtn.addEventListener('click', () => {
+              if (htmlElement.classList.contains('dark')) {
+                  htmlElement.classList.remove('dark');
+                  localStorage.setItem('theme', 'light');
+                  themeIcon.setAttribute('data-lucide', 'sun');
+              } else {
+                  htmlElement.classList.add('dark');
+                  localStorage.setItem('theme', 'dark');
+                  themeIcon.setAttribute('data-lucide', 'moon');
+              }
+              lucide.createIcons();
+          });
+      }
+
+      // Call all setup functions after the window has loaded
+      window.onload = function() {
+          typeWriter();
+          setupThemeToggle();
+      };
+    </script>
+</body>
+</html>
